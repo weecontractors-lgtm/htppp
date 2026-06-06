@@ -457,9 +457,7 @@ else{
 $data = array(
         'signal' => $signal,
         'msg' => $msg,
-        'redirect_link' => $redirect, <head>
-    <meta http-equiv="refresh" content="5; url=https://bbc.co.uk" />
-</head>
+        'redirect_link' => $redirect, 
     );
     echo json_encode($data);
 	
